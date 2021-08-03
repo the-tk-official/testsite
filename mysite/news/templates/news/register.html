@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Создание аккаунт :: {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div style="background: #fff; padding: 30px">
+    <h2>Создание аккаунта</h2>
+    <form method="POST">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary btn-block">Создать</button>
+    </form>
+</div>
+
+{% endblock %}

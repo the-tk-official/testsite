@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Вход :: {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div style="background: #fff; padding: 30px">
+    <h2>Вход</h2>
+    <form method="POST">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary btn-block">Войти</button>
+    </form>
+</div>
+
+
+
+
+{% endblock %}
